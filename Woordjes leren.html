@@ -1,0 +1,88 @@
+<html>
+<head>
+
+<style>
+table {
+ border: 0.5px solid black;
+ position: relative;
+ left: 35%;
+ top: 37%;
+ font-size: 275%;
+}
+th,td {
+ border: 1px solid black;
+}
+div.a {
+ position: relative;
+ left: 35%;
+ top: 33%;
+}
+div.c {
+ color: red;
+ font-size: 200%;
+ position: relative;
+ left: 35%;
+ top: 40%;
+}
+</style>
+
+</head>
+
+<body>
+<script>
+var Woorden=["ainsi que","d'ailleurs","d'autant plus que","en outre","en plus/de plus","enfin","en clair","afin de","par conséquent","c'est que","avant","dès que","désormais","tout à coup","tout de suite","alors que","or","le paradoxe","pourtant","toutefois","Tout en","pour autant","ainsi","au paravant","il se rapporte-t...","l'appuie","l'affaiblit","indigné","rassurant","la moquerie","loin de","ne que","pas mal de","davantage","supprimer","croître,croissant,accroissement,accroît,accru(e/s)","la hausse","baisser/la baisse","diminuer","dur","nuire/il nuit/il a nui","reprocher","un échec","apprendre/aprentissage","assez","comportement","décevant/décevoir/la déception","en tant que","mentir/mensonge","réduire","résigner/la résignation","tel que","la retraite","le banlieue","beur/maghrébin","familles aisées/favorisées/milieu favorisé","le patrimoine","SDF","le cerveau","internaute","sècher","la toile"]
+var Antwoorden=["net als","en dan nog iets","des te meer omdat","bovendien","bovendien","kortom/ten slotte","kortom","opdat","als gevolg","dat is omdat","voorheen","zodra","voortaan","plotseling","meteen","terwijl","welnu","de tegenstelling","toch/echter","toch","terwijl","daarom nog niet dat","zo/alleen","van tevoren", "hoe verhoudt zich...","ondersteunt","zwakt af","verontwaardigd","geruststellend","de spot","verre van","alleen/slechts","best veel","vooral","weghalen/afschaffen","de groei/groeiend","de stijging","de daling/dalen","verminderen/vermindering","moeilijk/hard","schaden/(slopen)","verwijten","een mislukking","leren/het aanleren","nogal/genoeg","gedrag","teleurstellend/teleurstelling/teleurstellen","als","liegen/leugen","verminderen","berusten/de berusting","zoals","het pensioen","de voorstad","iemand uit Marokko/Tunesië/Algerije","rijke families","het erfgoed","daklozen","het brein/de hersenen","internetgebruiker/websurfer","spijbelen","het Web"]
+//pas de array aan om andere woordjes te testen.
+
+function Functie(y){
+w=document.getElementById("W")
+a=document.getElementById("A")
+x=0
+z=0
+i=0
+
+if (y==0){
+alert("Js werkt! Je kan beginnen met de button 'volgende'.");
+}
+if (y==1){
+o=[Math.floor(Math.random() * 63)];
+x=Woorden[o];
+z=Antwoorden[o];
+w.innerHTML=x;
+setTimeout(function(){k=prompt("Antwoord:",);},1);
+setTimeout(function(){a.innerHTML=k;},2);
+setTimeout(function(){
+x=Woorden[o];
+z=Antwoorden[o];
+a=document.getElementById("A");
+if (a==z){
+b=document.getElementById("B");
+b.innerHTML="Goed.";
+}
+if (a!==z){
+b=document.getElementById("B");
+b.innerHTML="Het goede antwoord was: '"+z+"'.";
+}},3);
+}
+}
+</script>
+
+<div class="a">
+<button id="1" onclick="Functie(0)">Begin</button>
+
+</div>
+
+<table>
+ <tr>
+  <th><p id="W">Woord</th>
+  <th><p id="A">Antwoord</th>
+ </tr>
+</table>
+
+<div class="c">
+<button id="2" onclick="Functie(1)">Volgende</button>
+<p id="B"></p>
+</div>
+
+</body>
+</html>
